@@ -804,8 +804,7 @@ setup_rlimits(void)
   if (memory_limit)
     RLIM(AS, (rlim_t)memory_limit * 1024);
 
-  if (fsize_limit)
-    RLIM(FSIZE, (rlim_t)fsize_limit * 1024);
+  RLIM(FSIZE, (rlim_t)fsize_limit * 1024);
 
   if (open_file_limit)
     RLIM(NOFILE, (rlim_t)open_file_limit);
