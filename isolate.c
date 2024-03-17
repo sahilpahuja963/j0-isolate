@@ -810,7 +810,7 @@ setup_rlimits(void)
   if (open_file_limit)
     RLIM(NOFILE, (rlim_t)open_file_limit);
 
-  RLIM(STACK, (stack_limit ? (rlim_t)stack_limit * 1024 : RLIM_INFINITY));
+  RLIM(STACK, (rlim_t)stack_limit * 1024);
   RLIM(MEMLOCK, 0);
   RLIM(CORE, (rlim_t)core_limit * 1024);
 
